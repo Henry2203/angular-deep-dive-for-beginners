@@ -19,7 +19,7 @@ export class CourseCardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit() { }
 
   isImageVisible() {
     return this.course && this.course.iconUrl;
@@ -29,5 +29,11 @@ export class CourseCardComponent implements OnInit {
     console.log("card component - button clicked ...");
 
     this.courseEmitter.emit(this.course);
+  }
+
+  cardClasses() {
+    if (this.course.category == 'BEGINNER') {
+      return 'beginner';
+    }
   }
 }
